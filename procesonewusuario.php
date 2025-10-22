@@ -16,6 +16,9 @@ if((!isset($_POST))||(!isset($_POST['usuario']))||(!isset($_POST['contrasenia'])
     
     if($oDueño->addDueño()){
         $msj="Usuario creado con éxito";
+        // Redirigir al formulario de login para que el usuario pueda iniciar sesión
+        header('Location: formMascotas.php');
+        exit();
     } else {
         $msj="Error al crear el usuario";
 
